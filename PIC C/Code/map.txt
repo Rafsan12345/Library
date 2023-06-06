@@ -1,0 +1,18 @@
+#include <16F877A.h>
+#device ADC=8
+#use delay(crystal=20Mhz)
+#include <EasyArduino.h>
+#fuses HS
+
+void setup()
+{
+
+voidloop()
+{
+float v = analogRead(A0);
+v = map(v,0,1024,0,100); // 0---1024 range to set 0--100
+Serial_print1(v);
+delay(5000);
+}
+}
+
