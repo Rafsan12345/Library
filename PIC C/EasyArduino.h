@@ -129,3 +129,19 @@ void lcd_print3(char i)
 {
  printf(lcd_putc,"\f%s",i);
 }
+////////////////////////////////////////////
+void analogWrite(pin,float value)
+{
+float x99 = map(value,0,255,0,10);
+//x99 = constrain(x99,0,10);
+int ce = ceil( x99 );
+int on = constrain(ce,0,10);
+int of = 10 - ce;
+of = constrain(of,0,10);
+
+digitalWrite(pin,HIGH);
+delay(on);
+digitalWrite(pin,LOW);
+delay(of);
+}
+///////////////////////////
